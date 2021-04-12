@@ -13,14 +13,22 @@
 </head>
 
 <body>
-<div>5</div>
+    <input class="input" type="text" placeholder="Enter ingredient"><button class="b" >Recipe search</button>
+<div class="recipe"></div>
     
 </body>
-<script id="gif-template" type="text/x-handlebars-template">
-    
+<script id="recipe-template" type="text/x-handlebars-template">
+    {{#each recipe}}
+    <div class="rbox">
+    <div class="title">{{title}}</div>
+    <img src={{thumbnail}}>
+    {{#each ingredients}}
+    <ul>{{this}}</ul>
+    {{/each}}
+    </div>
+    {{/each}}
 </script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="handlebars/dist/handlebars.js"></script>
+\<script src="handlebars/dist/handlebars.js"></script>
 <script src="jquery/dist/jquery.js"></script>
 <script src="main.js"></script>
 
