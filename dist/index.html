@@ -5,30 +5,34 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Saira+Condensed:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipe_search-Nodejs</title>
 </head>
 
 <body>
-    <input class="input" type="text" placeholder="Enter ingredient"><button class="b" >Recipe search</button>
-<div class="recipe"></div>
-    
+    <button class="b">Recipe search</button> <input class="input" type="text" placeholder="Enter ingredient">
+    <div class="recipe"></div>
+
 </body>
 <script id="recipe-template" type="text/x-handlebars-template">
     {{#each recipe}}
     <div class="rbox">
-    <div class="title">{{title}}</div>
-    <img src={{thumbnail}}>
-    {{#each ingredients}}
-    <ul>{{this}}</ul>
-    {{/each}}
+     <a target="_blank" href={{href}}><div class="title" >{{title}}</div></a>
+     <img src={{thumbnail}}>
+     <div class="ingredients">Ingredients:
+      <ul>
+       {{#each ingredients}}
+        <li>{{this}}</li>
+       {{/each}}
+       </ul>
+      </div>
     </div>
     {{/each}}
 </script>
-\<script src="handlebars/dist/handlebars.js"></script>
+<script src="handlebars/dist/handlebars.js"></script>
 <script src="jquery/dist/jquery.js"></script>
 <script src="main.js"></script>
 
